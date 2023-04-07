@@ -3,14 +3,19 @@
   "keywords": "reference,Quick,Reference,cheatsheet,cheat,sheet",
   "data-info": "👆待完善需要您的参与",
   "search": {
-    "label": "搜索",
+    "label": " ",
     "placeholder": "搜索备忘清单",
     "cancel": "取消"
   },
   "editor": {
-    "label": "编辑"
+    "label": " "
+  },
+  "home": {
+    "label": " ",
+    "url": "https://blog.muieay.top"
   },
   "github": {
     "url": "https://github.com/jaywcjlove/reference"
-  }
+  },
+  "license": "Copyright (c) <b>2022</b> <a href='https://muieay.top'> Muieay </a>™"
 }
