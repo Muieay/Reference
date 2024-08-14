@@ -18,13 +18,13 @@ int main() {
 }
 ```
 
-使用 `gcc` 编译 `hello.c` 文件
+使用 `gcc` 编译 `hello.c` 源文件
 
 ```bash
 $ gcc -o hello hello.c
 ```
 
-运行编译后的二进制文件(`hello`)
+运行编译后的二进制文件可执行文件(`hello`)
 
 ```bash
 $ ./hello
@@ -37,8 +37,11 @@ $ ./hello
 ```c
 int myNum = 15;
 
-int myNum2; // 不赋值，然后再赋值
-myNum2 = 15;
+int myNum2; // 声明变量 myNum2
+// 变量声明后第一次赋值我们称为初始化
+// 如果 初始化 和 赋值 在同一行
+// 那么我们可以直接称为 定义变量 myNum2
+myNum2 = 15; 
 
 int myNum3 = 15;  // myNum3 值为 15
 myNum3 = 10;      // 现在 myNum3 值为 10
@@ -54,6 +57,8 @@ int x = 5, y = 6, z = 50;
 ```
 
 ### 常量 Constants
+
+常量在 C 语言中我们一般理解为不能被改变的值，活用常量与符号常量
 
 ```c
 const int minutesPerHour = 60;
@@ -443,7 +448,7 @@ int* ptr = &myAge;         // 名为 ptr 的指针变量，用于存储 myAge �
 
 printf("%d\n", myAge);     // 输出 myAge (43) 的值
 
-printf("%p\n", \&myAge);   // 输出 myAge 的内存地址（0x7ffe5367e044）
+printf("%p\n", &myAge);   // 输出 myAge 的内存地址（0x7ffe5367e044）
 
 printf("%p\n", ptr);       // 用指针（0x7ffe5367e044）输出myAge的内存地址
 ```
@@ -747,7 +752,8 @@ Carole 和 Debra: 我们爱你！
 ```c
 #include <stdio.h>
 
-#define tokenpaster(n) printf ("token" #n " = %d", token##n)
+#define tokenpaster(n) \
+    printf ("token" #n " = %d", token##n)
 
 int main(void){
   int token34 = 40;
@@ -766,8 +772,9 @@ int main(void){
 #endif
 
 int main(void) {
-  printf("Here is the message: %s\n", MESSAGE);  
-  return 0;
+    printf("信息如下: %s\n", \
+        MESSAGE);  
+    return 0;
 }
 ```
 
@@ -792,8 +799,9 @@ int square(int x) {
 #define MAX(x,y) ((x) > (y) ? (x) : (y))
 
 int main(void) {
-   printf("Max between 20 and 10 is %d\n", MAX(10, 20));  
-   return 0;
+    printf("20 到 10 之间的最大值是 %d\n", \
+        MAX(10, 20));  
+    return 0;
 }
 ```
 
